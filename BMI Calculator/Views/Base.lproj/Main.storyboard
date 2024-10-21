@@ -55,6 +55,9 @@
                                         </constraints>
                                         <color key="minimumTrackTintColor" red="0.4549019608" green="0.44705882349999998" blue="0.82352941180000006" alpha="0.51797945209999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <color key="thumbTintColor" red="0.4549019608" green="0.44705882349999998" blue="0.82352941180000006" alpha="0.49510380990000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="heightSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="sQn-7T-jTx"/>
+                                        </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xw8-bR-YUu">
                                         <rect key="frame" x="0.0" y="662" width="374" height="21"/>
@@ -83,6 +86,9 @@
                                         </constraints>
                                         <color key="minimumTrackTintColor" red="0.4549019608" green="0.44705882349999998" blue="0.82352941180000006" alpha="0.49890303940000003" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <color key="thumbTintColor" red="0.4549019608" green="0.44705882349999998" blue="0.82352941180000006" alpha="0.50481592470000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="weightSloder:" destination="BYZ-38-t0r" eventType="valueChanged" id="DRa-2M-BFv"/>
+                                        </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F0-S2-2nc">
                                         <rect key="frame" x="0.0" y="763" width="374" height="51"/>
@@ -101,7 +107,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="calculate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8UM-Uc-vHJ"/>
+                                            <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fvd-tU-cnS"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -121,18 +127,20 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="height" destination="2GN-cs-U2z" id="WYA-dg-c0F"/>
-                        <outlet property="weight" destination="qI8-dT-A9l" id="It7-d3-J86"/>
+                        <outlet property="height" destination="Pky-qY-oVp" id="Lpi-Ki-iZ7"/>
+                        <outlet property="heightLabel" destination="LTF-aL-8qu" id="35b-DX-yYc"/>
+                        <outlet property="weight" destination="s2X-C5-Zcz" id="gfI-zy-vxs"/>
+                        <outlet property="weightLabel" destination="E9v-cy-1H0" id="Xx9-4I-Goj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="QA2-bS-5c1">
             <objects>
-                <viewController id="lkq-xS-Cin" sceneMemberID="viewController">
+                <viewController id="lkq-xS-Cin" customClass="ResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A2l-zF-O8p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,6 +187,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="recalculateButton:" destination="lkq-xS-Cin" eventType="touchUpInside" id="Z12-11-Pyk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wMZ-LG-Y4P"/>
@@ -195,6 +206,11 @@
                             <constraint firstItem="r83-N3-Ash" firstAttribute="leading" secondItem="A2l-zF-O8p" secondAttribute="leading" id="vIH-oq-YVf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adviceLabel" destination="9IV-CT-mxw" id="98T-lD-x3S"/>
+                        <outlet property="bmiLabel" destination="VU9-2W-Sd5" id="M9R-y7-Aqd"/>
+                        <outlet property="resultLabel" destination="kYX-DY-jNL" id="mOV-su-oXj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fn-rV-g4l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
